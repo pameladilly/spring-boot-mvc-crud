@@ -1,4 +1,4 @@
-package com.baeldung.crud.controllers;
+package com.pameladilly.crud.controllers;
 
 import javax.validation.Valid;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.baeldung.crud.entities.User;
-import com.baeldung.crud.repositories.UserRepository;
+import com.pameladilly.crud.entities.User;
+import com.pameladilly.crud.repositories.UserRepository;
 
 @Controller
 public class UserController {

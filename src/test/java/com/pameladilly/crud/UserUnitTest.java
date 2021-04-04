@@ -1,6 +1,6 @@
-package com.baeldung.crud;
+package com.pameladilly.crud;
 
-import com.baeldung.crud.entities.User;
+import com.pameladilly.crud.entities.User;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -1,11 +1,10 @@
-package com.baeldung.crud;
+package com.pameladilly.crud;
 
-import com.baeldung.crud.controllers.UserController;
-import com.baeldung.crud.entities.User;
-import com.baeldung.crud.repositories.UserRepository;
+import com.pameladilly.crud.controllers.UserController;
+import com.pameladilly.crud.entities.User;
+import com.pameladilly.crud.repositories.UserRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.context.event.annotation.BeforeTestClass;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
@@ -16,13 +15,12 @@ import static org.mockito.Mockito.when;
 public class UserControllerUnitTest {
 
     private static UserController userController;
-    private static UserRepository mockedUserRepository;
     private static BindingResult mockedBindingResult;
     private static Model mockedModel;
 
     @BeforeAll
     public static void setUpUserControllerInstance() {
-        mockedUserRepository = mock(UserRepository.class);
+        UserRepository mockedUserRepository = mock(UserRepository.class);
         mockedBindingResult = mock(BindingResult.class);
         mockedModel = mock(Model.class);
         userController = new UserController(mockedUserRepository);

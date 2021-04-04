@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.github.pamelapoletto</groupId>
-    <artifactId>spring-boot-crud</artifactId>
+    <artifactId>spring-boot-crud-mvc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-crud</name>
     <description>Spring MVC APP</description>

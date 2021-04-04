@@ -1,7 +1,8 @@
-package com.baeldung.crud.repositories;
+package com.pameladilly.crud.repositories;
 
-import com.baeldung.crud.entities.User;
+import com.pameladilly.crud.entities.User;
 import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

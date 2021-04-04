@@ -1,4 +1,4 @@
-package com.baeldung.crud.entities;
+package com.pameladilly.crud.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
