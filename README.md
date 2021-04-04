@@ -1,3 +1,5 @@
+https://travis-ci.org/pameladilly/spring-boot-mvc-crud.svg?branch=master
+
 ## Spring boot CRUD
 
 This module contains articles about Spring Boot CRUD Operations
