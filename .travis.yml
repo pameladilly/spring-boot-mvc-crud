@@ -6,3 +6,5 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 addons:
   chrome: stable
+before_install:
+  - sudo apt-get install chromium-chromedriver
