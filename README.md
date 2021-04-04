@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pameladilly/spring-boot-mvc-crud.svg?branch=master)](https://travis-ci.org/pameladilly/spring-boot-mvc-crud)
+
 ## Spring boot CRUD
 
 This module contains articles about Spring Boot CRUD Operations
