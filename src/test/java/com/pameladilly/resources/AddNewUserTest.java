@@ -26,7 +26,7 @@ public class AddNewUserTest {
 
   @BeforeAll
   public static void setUp() {
-
+    System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
     AddNewUserTest.driver = new ChromeDriver();
 
     AddNewUserTest.context = SpringApplication.run(Application.class);
