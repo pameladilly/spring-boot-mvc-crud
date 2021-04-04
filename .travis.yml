@@ -4,3 +4,5 @@ jdk:
 dist: trusty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+addons:
+  chrome: stable
