@@ -20,7 +20,6 @@ import org.springframework.test.context.ContextConfiguration;
 public class AddNewUserTest {
 
   private static WebDriver driver;
-  private static ChromeOptions options;
 
   private static ConfigurableApplicationContext context;
 
@@ -28,10 +27,7 @@ public class AddNewUserTest {
   @BeforeAll
   public static void setUp() {
 
-    AddNewUserTest.options = new ChromeOptions();
-    AddNewUserTest.options.setHeadless(true);
-
-    AddNewUserTest.driver = new ChromeDriver(options);
+    AddNewUserTest.driver = new ChromeDriver();
 
     AddNewUserTest.context = SpringApplication.run(Application.class);
 
