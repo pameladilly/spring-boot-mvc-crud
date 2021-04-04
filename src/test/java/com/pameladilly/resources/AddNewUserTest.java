@@ -29,8 +29,8 @@ public class AddNewUserTest {
   public static void setUp() {
 
     AddNewUserTest.options = new ChromeOptions();
-   // System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
-    options.addArguments("--headless");
+    AddNewUserTest.options.setHeadless(true);
+
     AddNewUserTest.driver = new ChromeDriver(options);
 
     AddNewUserTest.context = SpringApplication.run(Application.class);
