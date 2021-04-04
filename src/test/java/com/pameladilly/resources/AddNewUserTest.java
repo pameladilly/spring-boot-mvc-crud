@@ -41,7 +41,7 @@ public class AddNewUserTest {
 
   @Test
   public void addNewUser() {
-    AddNewUserTest.driver.get("http://localhost:8080/");
+    AddNewUserTest.driver.get("http://127.0.0.1:8080/");
     AddNewUserTest.driver.manage().window().setSize(new Dimension(1344, 696));
     AddNewUserTest.driver.findElement(By.cssSelector(".fas")).click();
     AddNewUserTest.driver.findElement(By.id("name")).click();
