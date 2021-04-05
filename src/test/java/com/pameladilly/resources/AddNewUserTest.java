@@ -23,15 +23,22 @@ public class AddNewUserTest {
 
   private static ConfigurableApplicationContext context;
 
+  private static ChromeOptions options;
+
 
   @BeforeAll
   public static void setUp() {
     //System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
+    AddNewUserTest.options = new ChromeOptions();
+    options.addArguments("--headless");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
     AddNewUserTest.driver = new ChromeDriver();
 
     AddNewUserTest.context = SpringApplication.run(Application.class);
 
   }
+
   @AfterAll
   public static void tearDown() {
     AddNewUserTest.driver.quit();
