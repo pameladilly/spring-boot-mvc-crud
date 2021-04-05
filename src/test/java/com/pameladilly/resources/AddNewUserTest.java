@@ -28,7 +28,7 @@ public class AddNewUserTest {
 
   @BeforeAll
   public static void setUp() {
-    //System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
     AddNewUserTest.options = new ChromeOptions();
     options.addArguments("--headless");
     options.addArguments("--no-sandbox");
