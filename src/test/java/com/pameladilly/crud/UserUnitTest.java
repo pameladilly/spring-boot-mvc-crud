@@ -81,5 +81,6 @@ public class UserUnitTest {
 
         Assertions.assertEquals(userMock, user);
         Assertions.assertTrue(userMock.equals(user));
+        Assertions.assertEquals(user.hashCode(), userMock.hashCode());
     }
 }
