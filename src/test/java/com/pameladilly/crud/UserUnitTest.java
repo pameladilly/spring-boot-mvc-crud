@@ -1,6 +1,7 @@
 package com.pameladilly.crud;
 
 import com.pameladilly.crud.entities.User;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,40 +9,41 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UserUnitTest {
     
     @Test
-    public void whenCalledGetName_thenCorrect() {
-        User user = new User("Julie", "julie@domain.com");
+    @DisplayName("Validar nome e e-mail")
+    public void testCorrectNameAndMail() {
+        String name = "Mario";
+        String mail = "mario@gmail.com";
+        User user = new User(name, mail);
         
-        assertThat(user.getName()).isEqualTo("Julie");
+        assertThat(user.getName()).isEqualTo(name);
+        assertThat(user.getEmail()).isEqualTo(mail);
     }
     
-    @Test
-    public void whenCalledGetEmail_thenCorrect() {
-        User user = new User("Julie", "julie@domain.com");
-        
-        assertThat(user.getEmail()).isEqualTo("julie@domain.com");
-    }
+
     
     @Test
-    public void whenCalledSetName_thenCorrect() {
-        User user = new User("Julie", "julie@domain.com");
+    @DisplayName("Validar setter nome e e-mail")
+    public void testSetNameAndSetMail() {
+        String name = "Mario";
+        String mail = "mario@gmail.com";
+        User user = new User(name, mail);
         
-        user.setName("John");
+        user.setName("Carlos");
+        user.setEmail("carlos@gmail.com");
         
-        assertThat(user.getName()).isEqualTo("John");
+        assertThat(user.getName()).isEqualTo("Carlos");
+        assertThat(user.getEmail()).isEqualTo("carlos@gmail.com");
+
     }
+
     
     @Test
-    public void whenCalledSetEmail_thenCorrect() {
-        User user = new User("Julie", "julie@domain.com");
-        
-        user.setEmail("john@domain.com");
-        
-        assertThat(user.getEmail()).isEqualTo("john@domain.com");
-    }
-    
-    @Test
-    public void whenCalledtoString_thenCorrect() {
-        User user = new User("Julie", "julie@domain.com");
-        assertThat(user.toString()).isEqualTo("User{id=0, name=Julie, email=julie@domain.com}");
+    @DisplayName("Validar toString")
+    public void testToString() {
+        String name = "Mario";
+        String mail = "mario@gmail.com";
+
+        User user = new User(name, mail);
+        assertThat(user.toString()).isEqualTo("User{id=0, name=Mario, email=mario@gmail.com}");
     }
 }

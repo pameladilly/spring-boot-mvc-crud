@@ -3,8 +3,11 @@ package com.pameladilly.crud;
 import com.pameladilly.crud.controllers.UserController;
 import com.pameladilly.crud.entities.User;
 import com.pameladilly.crud.repositories.UserRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
@@ -27,41 +30,56 @@ public class UserControllerUnitTest {
     }
 
     @Test
+    @DisplayName("Chamada ao index")
     public void whenCalledIndex_thenCorrect() {
-        assertThat(userController.showUserList(mockedModel)).isEqualTo("index");
+        Assertions.assertEquals(userController.showUserList(mockedModel), "index");
+
     }
 
     @Test
+    @DisplayName("Chamada para add usuário")
     public void whenCalledshowSignUpForm_thenCorrect() {
         User user = new User("John", "john@domain.com");
 
-        assertThat(userController.showSignUpForm(user)).isEqualTo("add-user");
+        Assertions.assertEquals(userController.showSignUpForm(user), "add-user");
+
     }
     
     @Test
+    @DisplayName("Redirecionamento ao index após cadastrar usuário")
     public void whenCalledaddUserAndValidUser_thenCorrect() {
         User user = new User("John", "john@domain.com");
 
-        when(mockedBindingResult.hasErrors()).thenReturn(false);
+        Mockito.when(mockedBindingResult.hasErrors()).thenReturn(false);
 
-        assertThat(userController.addUser(user, mockedBindingResult, mockedModel)).isEqualTo("redirect:/index");
+        Assertions.assertEquals( userController.addUser(user, mockedBindingResult, mockedModel), "redirect:/index");
+
     }
 
+
     @Test
+    @DisplayName("Redirecimento ao form de add usuário quando tiver erro ")
     public void whenCalledaddUserAndInValidUser_thenCorrect() {
         User user = new User("John", "john@domain.com");
 
-        when(mockedBindingResult.hasErrors()).thenReturn(true);
+        Mockito.when(mockedBindingResult.hasErrors()).thenReturn(true);
 
-        assertThat(userController.addUser(user, mockedBindingResult, mockedModel)).isEqualTo("add-user");
+        Assertions.assertEquals(userController.addUser(user, mockedBindingResult, mockedModel), "add-user");
     }
 
-//    @Test(expected = IllegalArgumentException.class)
-//    public void whenCalledshowUpdateForm_thenIllegalArgumentException() {
-//        assertThat(userController.showUpdateForm(0, mockedModel)).isEqualTo("update-user");
-//    }
+    @Test
+    @DisplayName("Retornar exceção ao tentar atualizar usuário com id inexistente")
+    public void testShowUpdateForm_ExceptionIllegalArgument(){
+
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            userController.showUpdateForm(0, mockedModel);
+        });
+
+    }
     
     @Test
+    @DisplayName("Redirecimento ao index ao atualizar usuário")
     public void whenCalledupdateUserAndValidUser_thenCorrect() {
         User user = new User("John", "john@domain.com");
 
@@ -71,16 +89,21 @@ public class UserControllerUnitTest {
     }
 
     @Test
+    @DisplayName("Redirecionamento ao form de atualização ao inserir dados incorretos")
     public void whenCalledupdateUserAndInValidUser_thenCorrect() {
         User user = new User("John", "john@domain.com");
 
         when(mockedBindingResult.hasErrors()).thenReturn(true);
 
-        assertThat(userController.updateUser(1l, user, mockedBindingResult, mockedModel)).isEqualTo("update-user");
+        assertThat(userController.updateUser(1L, user, mockedBindingResult, mockedModel)).isEqualTo("update-user");
     }
     
-//    @Test(expected = IllegalArgumentException.class)
-//    public void whenCalleddeleteUser_thenIllegalArgumentException() {
-//        assertThat(userController.deleteUser(1l, mockedModel)).isEqualTo("redirect:/index");
-//    }
+    @Test
+    @DisplayName("Retornar exceção ao tentar excluir usuário com id inexistente")
+    public void whenCalleddeleteUser_thenIllegalArgumentException() {
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            userController.deleteUser(1L, mockedModel);
+        });
+    }
 }
