@@ -1,5 +1,7 @@
 package com.pameladilly.crud.entities;
 
+import com.google.common.base.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -52,5 +54,19 @@ public class User {
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", name=" + name + ", email=" + email + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                Objects.equal(email, user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id, email);
     }
 }
