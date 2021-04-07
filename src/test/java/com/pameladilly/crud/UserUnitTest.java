@@ -80,5 +80,6 @@ public class UserUnitTest {
         userMock.setId(71L);
 
         Assertions.assertEquals(userMock, user);
+        Assertions.assertTrue(userMock.equals(user));
     }
 }
