@@ -23,8 +23,6 @@ public class AddNewUserTest {
 
   private static ConfigurableApplicationContext context;
 
-  private static ChromeOptions options;
-
 
   @BeforeAll
   public static void setUp() {
