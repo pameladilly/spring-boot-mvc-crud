@@ -116,12 +116,12 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <rulesets>
-                        <ruleset>/category/java/bestpractices.xml</ruleset>
-                        <ruleset>pmd.xml</ruleset>
-                    </rulesets>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <rulesets>-->
+<!--                        <ruleset>/category/java/bestpractices.xml</ruleset>-->
+<!--                        <ruleset>pmd.xml</ruleset>&ndash;&gt;-->
+<!--                    </rulesets>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
