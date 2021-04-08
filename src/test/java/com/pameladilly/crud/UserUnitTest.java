@@ -4,7 +4,6 @@ import com.pameladilly.crud.entities.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -83,4 +82,5 @@ public class UserUnitTest {
         Assertions.assertTrue(userMock.equals(user));
         Assertions.assertEquals(user.hashCode(), userMock.hashCode());
     }
+
 }

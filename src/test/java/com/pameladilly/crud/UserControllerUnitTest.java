@@ -85,7 +85,7 @@ public class UserControllerUnitTest {
 
         when(mockedBindingResult.hasErrors()).thenReturn(false);
 
-        assertThat(userController.updateUser(1l, user, mockedBindingResult, mockedModel)).isEqualTo("redirect:/index");
+        assertThat(userController.updateUser(1L, user, mockedBindingResult, mockedModel)).isEqualTo("redirect:/index");
     }
 
     @Test
