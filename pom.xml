@@ -119,7 +119,7 @@
                 <configuration>
                     <rulesets>
 <!--                        <ruleset>/category/java/bestpractices.xml</ruleset>-->
-                        <ruleset>pmd.xml</ruleset>
+<!--                        <ruleset>pmd.xml</ruleset>-->
                     </rulesets>
                 </configuration>
             </plugin>
